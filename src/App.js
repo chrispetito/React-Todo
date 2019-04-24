@@ -1,5 +1,6 @@
 import React from "react";
-import Task from "./task";
+import Task from "./Task";
+import Form from "./Form";
 
 const tasks = [{ name: "example", id: "example", completed: "test" }];
 
@@ -14,7 +15,7 @@ class App extends React.Component {
       task: {
         name: "",
         id: "",
-        completed: ""
+        completed: false
       }
     };
   }
@@ -34,9 +35,9 @@ class App extends React.Component {
     this.setState({
       tasksList: [...this.state.tasksList, this.state.task],
       task: {
-        name: ' ',
-        id: '',
-        completed: ''
+        name: "",
+        id: "",
+        completed: false
       }
     });
   };
@@ -51,15 +52,11 @@ class App extends React.Component {
             <Task task={task} />
           ))}
         </div>
-        <form onSubmit={this.addTask}>
-          <input
-            placeholder="name"
-            value={this.state.task.name}
-            onChange={this.handleChanges}
-            name="name"
-          />
-          <button>ADD TASK</button>
-        </form>
+        <Form
+          handleProp={this.handleChanges}
+          addProp={this.addTask}
+          formProp={this.state}
+        />
       </div>
     );
   }
