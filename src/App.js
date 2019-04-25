@@ -10,11 +10,11 @@ class App extends React.Component {
   constructor() {
     super();
     this.state = {
-      toDoList: todos,
+      toDoList: todos, 
       todo: {
-        task: "",
+        task: '',
         id: Date.now(),
-        completed: false
+        completed: false,
       }
     };
   }
@@ -31,12 +31,13 @@ class App extends React.Component {
 
   addToDo = event => {
     event.preventDefault();
+    if (!this.state.todo.task) return;
     this.setState({
       toDoList: [...this.state.toDoList, this.state.todo],
       todo: {
         task: "",
         id: Date.now(),
-        completed: false
+        completed: false,
       }
     });
   };
