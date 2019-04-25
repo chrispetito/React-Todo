@@ -10,9 +10,10 @@ function ToDoForm(props) {
           onChange={props.handleProp}
           name="task"
           key="task"
+          className='task-input'
         />
-        <button>ADD TASK</button>
-        <button onClick={props.clearProp}>Clear Completed</button>
+        <button className = 'add-button'>ADD TASK</button>
+        <button className='clear-button' onClick={props.clearProp}>CLEAR COMPLETED</button>
       </form>
     </div>
   );

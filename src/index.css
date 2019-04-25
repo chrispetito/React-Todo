@@ -1,14 +1,87 @@
+body{
+    font-size: 62.5%;
+}
 .todo.completed {
-    color: blue;
-    text-decoration: line-through;
-  }
+  color: #c4c4c4;
+  text-decoration: line-through;
+}
 .to-do-list {
-    color: black;
+  color: black;
 }
 .todo {
-    background-color: white;
-    width: 45%;
-    text-align: left;
-    margin: 4px 0;
-    padding-left: 8px;
+  background-color: white;
+  width: 45%;
+  text-align: left;
+  margin: 4px 0;
+  padding-left: 8px;
+}
+
+.todo:hover {
+  cursor: pointer;
+}
+.container {
+  margin: 0 auto;
+  margin-top: 2rem;
+  width: 30%;
+  min-width: 500px;
+  height: 700px;
+  border-radius: 10px;
+  border: 1px solid grey;
+}
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.button-form form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+}
+.task-input {
+  border: 0;
+  padding: 12px 16px;
+  margin: 8px;
+  background: #fff;
+  font-size: 0.8rem;
+  width: 50%;
+  border-radius: 0;
+  outline: 0;
+  border: 1px solid #d4d4d4;
+  border-radius: 6px;
+}
+.add-button {
+    width: 50%;
+    font-family: 'arial';
+    background-color: rgb(33, 150, 243);
+    color: white;
+    height: 40px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    border: none;
+    margin-bottom: 8px;
   }
+  .add-button:hover {
+    background-color: rgb(33, 150, 243, 0.8);
+    cursor: pointer;
+  }
+
+  .clear-button {
+    width: 50%;
+    font-family: 'arial';
+    background-color: rgb(33, 150, 243);
+    color: white;
+    height: 40px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    border: none;
+  }
+  .clear-button:hover {
+    background-color: rgb(33, 150, 243, 0.8);
+    cursor: pointer;
+  }
+button:focus {
+    outline-width: 0;
+}
+  
