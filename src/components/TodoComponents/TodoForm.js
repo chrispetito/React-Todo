@@ -12,8 +12,11 @@ function ToDoForm(props) {
           key="task"
           className='task-input'
         />
+        <div className='both-buttons'>
         <button className = 'add-button'>ADD TASK</button>
         <button className='clear-button' onClick={props.clearProp}>CLEAR COMPLETED</button>
+        </div>
+       
       </form>
     </div>
   );

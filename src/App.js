@@ -59,16 +59,22 @@ class App extends React.Component {
     return (
       <div className="container">
         <div className="header">
-          <h2>Welcome to your Todo App!</h2>
+          <h2>TO-DO LIST</h2>
         </div>
-
-        <TodoList listProp={this.state} toggleComplete={this.toggleComplete} />
-        <ToDoForm
-          handleProp={this.handleChanges}
-          addProp={this.addToDo}
-          formProp={this.state}
-          clearProp={this.clearCompleted}
-        />
+        <div className="list-container">
+          <TodoList
+            listProp={this.state}
+            toggleComplete={this.toggleComplete}
+          />
+        </div>
+        <div className="form-container">
+          <ToDoForm
+            handleProp={this.handleChanges}
+            addProp={this.addToDo}
+            formProp={this.state}
+            clearProp={this.clearCompleted}
+          />
+        </div>
       </div> //container
     );
   }
