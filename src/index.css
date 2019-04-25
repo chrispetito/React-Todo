@@ -5,18 +5,20 @@ body {
   color: black;
 }
 .todo {
-    color: #4f4f4f;
+    color: rgb(33, 150, 243);
     padding-left: 20px;
     margin-top: 1rem;
-    border: 1px solid red;
+    background: white;
+    border: 1px solid rgb(33, 150, 243);
+    border-radius: 10px;
   }
 .todo.completed {
-    color: #c8c8c8;
+    color: white;
     text-decoration: line-through;
     padding-left: 20px;
     margin-top: 1rem;
     border-radius: 10px;
-    border: 1px solid red;
+    background: rgb(33, 150, 243);
   }
 .todo:hover {
   cursor: pointer;
