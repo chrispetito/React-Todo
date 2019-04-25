@@ -1,11 +1,11 @@
 import React from 'react';
 
-function Task (props) {
+function Todo (props) {
     return (
         <div className = 'task-card'>
-        <p>{props.task.name}</p>
+        <p>{props.todo.task}</p>
         </div>
     )
 }
 
-export default Task;
+export default Todo;

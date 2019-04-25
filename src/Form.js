@@ -1,19 +1,20 @@
 import React from "react";
 
-function Form(props) {
+function ToDoForm(props) {
   return (
-    <div>
+    <div className ='button-form'>
       <form onSubmit={props.addProp}>
         <input
-          placeholder="name"
-          value={props.formProp.task.name}
+          placeholder="Compose Task"
+          value={props.formProp.todo.task}
           onChange={props.handleProp}
-          name="name"
+          name="task"
         />
         <button>ADD TASK</button>
+        <button>Clear Completed</button>
       </form>
     </div>
   );
 }
 
-export default Form;
+export default ToDoForm;
