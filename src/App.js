@@ -1,12 +1,12 @@
 import React from "react";
-import TodoList from './components/TodoComponents/TodoList';
+import TodoList from "./components/TodoComponents/TodoList";
 import ToDoForm from "./components/TodoComponents/TodoForm";
 
 const todos = [
   {
     task: "Organize Garage",
     id: 1528817077286,
-    completed: false
+    completed: true
   },
   {
     task: "Bake Cookies",
@@ -24,7 +24,7 @@ class App extends React.Component {
       toDoList: todos,
       todo: {
         task: "",
-        id: 1,
+        id: Date.now(),
         completed: false
       }
     };
@@ -46,9 +46,23 @@ class App extends React.Component {
       toDoList: [...this.state.toDoList, this.state.todo],
       todo: {
         task: "",
-        id: 1,
+        id: Date.now(),
         completed: false
       }
+    });
+  };
+
+  toggleComplete = id => {
+    this.setState({
+      toDoList: this.state.toDoList.map(todo =>
+        todo.id === id ? { ...todo, completed: !todo.completed } : todo
+      )
+    });
+  };
+
+  clearCompleted = () => {
+    this.setState({
+      toDoList: this.state.toDoList.filter(item => !item.completed)
     });
   };
 
@@ -59,15 +73,14 @@ class App extends React.Component {
           <h2>Welcome to your Todo App!</h2>
         </div>
 
-        <TodoList 
-          listProp={this.state}
-        />
+        <TodoList listProp={this.state} toggleComplete={this.toggleComplete} />
         <ToDoForm
           handleProp={this.handleChanges}
           addProp={this.addToDo}
           formProp={this.state}
+          clearProp={this.clearCompleted}
         />
-      </div>
+      </div> //container
     );
   }
 }
